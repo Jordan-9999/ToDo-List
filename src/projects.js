@@ -1,10 +1,14 @@
+function createProject(name, list = []){
 
+    return {
+        name,
+        list,
+        pushIntoProject(obj){
+list.push(obj)}
+        }
+    };
+   
 
-function createProject(projectTitle,...obj){
- return {projectTitle,
-    toDoItem : obj
- }
-};
 
 export {createProject};
 
