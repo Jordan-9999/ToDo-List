@@ -1,11 +1,27 @@
 function createProject(name, list = []){
 
-    return {
+    const project =  {
         name,
         list,
-        pushIntoProject(obj){
-list.push(obj)}
-        }
+
+        createToDo(title, description, dueDate, priority, complete){
+            const toDo =  {
+               title,
+               description,
+               dueDate,
+               priority,
+               complete
+           };
+           toDo.id = self.crypto.randomUUID();
+           return toDo;
+       },
+
+        pushIntoProject(toDo){
+list.push(toDo)}
+        };
+        project.id = self.crypto.randomUUID();
+        
+        return project;
     };
    
 
