@@ -1,9 +1,9 @@
-function createProject(name, list = []){
+function createProject(name, list = [], completed = []){
 
     const project =  {
         name,
         list,
-
+        completed,
         createToDo(title, description, dueDate, priority, complete){
             const toDo =  {
                title,
@@ -13,14 +13,16 @@ function createProject(name, list = []){
                complete
            };
            toDo.id = self.crypto.randomUUID();
-           return toDo;
-       },
+           list.push(toDo);},
 
-        pushIntoProject(toDo){
-list.push(toDo)}
-        };
+        setToCompleted(toDo){
+         completed.push(...list.splice(toDo, 1));
+        },
+        returnToList(toDo){
+         list.push(...completed.splice(toDo, 1));
+        }}
+
         project.id = self.crypto.randomUUID();
-        
         return project;
     };
    
